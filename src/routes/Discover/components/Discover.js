@@ -8,6 +8,7 @@ import {
 } from 'react-spotify-api';
 import '../styles/_discover.scss';
 import { Scopes, SpotifyAuth } from 'react-spotify-auth';
+import config from '../../../config';
 
 export default function Discover() {
   const limit = 10;
@@ -55,8 +56,8 @@ export default function Discover() {
         </>
       ) : (
         <SpotifyAuth
-          redirectUri={process.env.REACT_APP_SPOTIFY_CALLBACK_URL}
-          clientID={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
+          redirectUri={config.api.authCallbackUrl}
+          clientID={config.api.clientId}
           scopes={[Scopes.userReadPrivate]}
         />
       )}
