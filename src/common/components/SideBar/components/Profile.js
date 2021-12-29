@@ -22,7 +22,9 @@ export default function Profile() {
           )}
           <p>{user.display_name}</p>
         </>
-      ) : null}
+      ) : (
+        <p>Please login to proceed</p>
+      )}
     </div>
   );
 }
